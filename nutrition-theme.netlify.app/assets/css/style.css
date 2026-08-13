@@ -30,7 +30,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
-  background: var(--white);
+  background: var(--blue);
   overflow-x: hidden;
 }
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
