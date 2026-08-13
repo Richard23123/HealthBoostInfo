@@ -4,7 +4,7 @@
   --green: #3a8c3f;
   --green-light: #5cb85c;
   --green-pale: #e8f5e9;
-  --green-dark: #1b5e20;
+  --blue-dark: #182333;
   --cream: #faf7f2;
   --beige: #f0ebe0;
   --orange: #f4845f;
@@ -103,7 +103,7 @@ img { max-width: 100%; }
   color: var(--white) !important;
   letter-spacing: -0.5px;
 }
-#mainNav.scrolled .navbar-brand { color: var(--green-dark) !important; }
+#mainNav.scrolled .navbar-brand { color: var(--blue-dark) !important; }
 .navbar-brand span { color: var(--green-light); }
 #mainNav.scrolled .navbar-brand span { color: var(--orange); }
 .nav-link {
