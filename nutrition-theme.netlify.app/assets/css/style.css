@@ -1,14 +1,14 @@
 
 /* ========== CSS VARIABLES ========== */
 :root {
-  --green: #3a8c3f;
-  --green-light: #5cb85c;
+  --blue-light: #38547d;
+  --blue-dark: #182333;
   --green-pale: #e8f5e9;
   --blue-dark: #182333;
   --cream: #faf7f2;
   --beige: #f0ebe0;
-  --orange: #f4845f;
-  --orange-light: #ffb347;
+  --orange: #d49d0f;
+  --yellow-light: #f1b42f;
   --text-dark: #1a2332;
   --text-mid: #4a5568;
   --text-light: #718096;
