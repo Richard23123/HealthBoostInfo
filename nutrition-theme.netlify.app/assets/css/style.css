@@ -63,7 +63,7 @@ img { max-width: 100%; }
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--blue-dark);
   animation: fadeLetters 1.5s ease-in-out infinite alternate;
 }
 @keyframes fadeLetters { from { opacity: 0.4; } to { opacity: 1; } }
@@ -76,7 +76,7 @@ img { max-width: 100%; }
 }
 .loader-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--green), var(--green-light));
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
   border-radius: 10px;
   animation: loadBar 2s ease-in-out forwards;
 }
@@ -104,8 +104,8 @@ img { max-width: 100%; }
   letter-spacing: -0.5px;
 }
 #mainNav.scrolled .navbar-brand { color: var(--blue-dark) !important; }
-.navbar-brand span { color: var(--green-light); }
-#mainNav.scrolled .navbar-brand span { color: var(--orange); }
+.navbar-brand span { color: var(--blue-light); }
+#mainNav.scrolled .navbar-brand span { color: var(--yellow-light); }
 .nav-link {
   font-size: 13px;
   font-weight: 500;
@@ -121,26 +121,26 @@ img { max-width: 100%; }
   content: '';
   position: absolute; bottom: 2px; left: 50%; right: 50%;
   height: 2px;
-  background: var(--green-light);
+  background: var(--blue-light);
   transition: var(--transition);
 }
 .nav-link:hover::after, .nav-link.active::after { left: 16px; right: 16px; }
 .nav-cta {
-  background: var(--green) !important;
+  background: var(--blue) !important;
   color: white !important;
   border-radius: 50px !important;
   padding: 8px 24px !important;
 }
-.nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); }
+.nav-cta:hover { background: var(--blue-dark) !important; transform: translateY(-1px); }
 .nav-cta::after { display: none !important; }
 .navbar-toggler { border: 2px solid rgba(255,255,255,0.5); }
-#mainNav.scrolled .navbar-toggler { border-color: var(--green); }
+#mainNav.scrolled .navbar-toggler { border-color: var(--blue-light); }
 .hamburger-icon span {
   display: block; width: 22px; height: 2px;
   background: white; margin: 5px 0;
   transition: var(--transition);
 }
-#mainNav.scrolled .hamburger-icon span { background: var(--green-dark); }
+#mainNav.scrolled .hamburger-icon span { background: var(--blue-dark); }
 .program-hero{
   position: relative;
   min-height: 100vh;
