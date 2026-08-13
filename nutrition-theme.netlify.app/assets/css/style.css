@@ -104,7 +104,7 @@ img { max-width: 100%; }
   letter-spacing: -0.5px;
 }
 #mainNav.scrolled .navbar-brand { color: var(--yellow) !important; }
-.navbar-brand span { color: var(--blue-light); }
+.navbar-brand span { color: var(--yellow); }
 #mainNav.scrolled .navbar-brand span { color: var(--yellow-light); }
 .nav-link {
   font-size: 13px;
@@ -121,7 +121,7 @@ img { max-width: 100%; }
   content: '';
   position: absolute; bottom: 2px; left: 50%; right: 50%;
   height: 2px;
-  background: var(--blue-light);
+  background: var(--yellow);
   transition: var(--transition);
 }
 .nav-link:hover::after, .nav-link.active::after { left: 16px; right: 16px; }
