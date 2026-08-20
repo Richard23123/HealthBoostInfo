@@ -103,7 +103,7 @@ img { max-width: 100%; }
   color: var(--white) !important;
   letter-spacing: -0.5px;
 }
-#mainNav.scrolled .navbar-brand { color: var(--yellow) !important; }
+#mainNav.scrolled .navbar-brand { color: var(--white) !important; }
 .navbar-brand span { color: var(--yellow); }
 #mainNav.scrolled .navbar-brand span { color: var(--white); }
 .nav-link {
@@ -116,7 +116,7 @@ img { max-width: 100%; }
   transition: var(--transition);
   position: relative;
 }
-#mainNav.scrolled .nav-link { color: var(--text-dark) !important; }
+#mainNav.scrolled .nav-link { color: var(--blue-dark) !important; }
 .nav-link::after {
   content: '';
   position: absolute; bottom: 2px; left: 50%; right: 50%;
