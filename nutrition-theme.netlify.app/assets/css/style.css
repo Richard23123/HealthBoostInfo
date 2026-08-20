@@ -91,7 +91,7 @@ img { max-width: 100%; }
   background: transparent;
 }
 #mainNav.scrolled {
-  background: #d49d0f;
+  background: #ffffff;
   backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 2px 30px rgba(0,0,0,0.08);
