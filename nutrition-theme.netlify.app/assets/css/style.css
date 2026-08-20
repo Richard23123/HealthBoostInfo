@@ -30,7 +30,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
-  background: var(--blue);
+  background: var(--yellow);
   overflow-x: hidden;
 }
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
@@ -76,7 +76,7 @@ img { max-width: 100%; }
 }
 .loader-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-light));
   border-radius: 10px;
   animation: loadBar 2s ease-in-out forwards;
 }
@@ -91,7 +91,7 @@ img { max-width: 100%; }
   background: transparent;
 }
 #mainNav.scrolled {
-  background: rgba(255,255,255,0.97);
+  background: #d49d0f;
   backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 2px 30px rgba(0,0,0,0.08);
@@ -111,7 +111,7 @@ img { max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9) !important;
+  color: #d49d0f !important;
   padding: 8px 16px !important;
   transition: var(--transition);
   position: relative;
@@ -126,21 +126,21 @@ img { max-width: 100%; }
 }
 .nav-link:hover::after, .nav-link.active::after { left: 16px; right: 16px; }
 .nav-cta {
-  background: var(--blue) !important;
+  background: var(--yellow) !important;
   color: white !important;
   border-radius: 50px !important;
   padding: 8px 24px !important;
 }
-.nav-cta:hover { background: var(--blue-dark) !important; transform: translateY(-1px); }
+.nav-cta:hover { background: var(--yellow-light) !important; transform: translateY(-1px); }
 .nav-cta::after { display: none !important; }
 .navbar-toggler { border: 2px solid rgba(255,255,255,0.5); }
-#mainNav.scrolled .navbar-toggler { border-color: var(--blue-light); }
+#mainNav.scrolled .navbar-toggler { border-color: var(--yellow-light); }
 .hamburger-icon span {
   display: block; width: 22px; height: 2px;
   background: white; margin: 5px 0;
   transition: var(--transition);
 }
-#mainNav.scrolled .hamburger-icon span { background: var(--blue-dark); }
+#mainNav.scrolled .hamburger-icon span { background: var(--yellow-light); }
 .program-hero{
   position: relative;
   min-height: 100vh;
@@ -200,7 +200,7 @@ img { max-width: 100%; }
   font-weight: 300;
 }
 .btn-hero-primary {
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+  background: linear-gradient(135deg, var(--yellow-dark), var(--yellow-light));
   color: white;
   border: none;
   padding: 16px 36px;
@@ -376,7 +376,7 @@ img { max-width: 100%; }
 .cert-badge {
   display: flex; align-items: center; gap: 8px;
   background: var(--blue-pale);
-  color: var(--blue-dark);
+  color: var(--yellow );
   font-size: 12px;
   font-weight: 600;
   padding: 7px 14px;
