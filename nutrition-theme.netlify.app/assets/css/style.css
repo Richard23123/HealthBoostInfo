@@ -100,12 +100,12 @@ img { max-width: 100%; }
   font-family: 'Playfair Display', serif;
   font-size: 26px;
   font-weight: 900;
-  color: var(--yellow) !important; 
+  color: var(--white) !important; 
   letter-spacing: -0.5px;
 }
 #mainNav.scrolled .navbar-brand { color: var(--blue-dark) !important; }
-.navbar-brand span { color: var(--yellow); }
-#mainNav.scrolled .navbar-brand span { color: var(--white); }
+.navbar-brand span { color: var(--yellow-light); }
+#mainNav.scrolled .navbar-brand span { color: var(--yellow-light); }
 .nav-link {
   font-size: 13px;
   font-weight: 500;
