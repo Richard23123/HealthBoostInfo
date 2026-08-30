@@ -426,12 +426,13 @@ img { max-width: 100%; }
 .service-card::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--blue-pale), transparent);
+  background: linear-gradient(180deg,  rgba(245, 200, 75, 0.30) 0%, rgba(245, 200, 75, 0.12) 45%,, transparent);
   opacity: 0;
   transition: var(--transition);
+   pointer-events: none;
 }
 .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(213, 157, 15, 0.40); border-color: var(--yellow); }
-.service-card:hover::before { opacity: 0; }
+.service-card:hover::before { opacity: 1; }
 .service-card:hover .svc-icon { transform: scale(1.1); background: var(--yellow-light); }
 .service-card:hover .svc-icon i { color: white; }
 .svc-icon {
@@ -463,7 +464,7 @@ img { max-width: 100%; }
   position: relative;
   overflow: hidden;
 }
-.pricing-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.pricing-card:hover { transform: translateY(-5px); box-shadow:  0 0 15px rgba(245, 200, 75, 0.45), 0 15px 45px rgba(212, 157, 15, 0.25); }
 .pricing-card.popular {
   border-color: var(--yellow-light);
   transform: scale(1.04);
@@ -492,7 +493,7 @@ img { max-width: 100%; }
 .btn-pricing {
   display: block; width: 100%;
   background: var(--blue-pale);
-  color: var(--white);
+  color: var(--yellow);
   border: none;
   padding: 14px;
   border-radius: 50px;
@@ -503,7 +504,7 @@ img { max-width: 100%; }
   text-decoration: none; text-align: center;
 }
 .btn-pricing:hover, .pricing-card.popular .btn-pricing {
-  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
   color: var(--yellow-light);
   box-shadow: 0 8px 30px rgba(241, 180, 47,0.4);
   transform: translateY(-1px);
