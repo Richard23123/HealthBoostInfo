@@ -431,7 +431,7 @@ img { max-width: 100%; }
   transition: var(--transition);
 }
 .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(213, 157, 15, 0.40); border-color: var(--yellow); }
-.service-card:hover::before { opacity: 1; }
+.service-card:hover::before { opacity: 0; }
 .service-card:hover .svc-icon { transform: scale(1.1); background: var(--yellow-light); }
 .service-card:hover .svc-icon i { color: white; }
 .svc-icon {
@@ -443,7 +443,7 @@ img { max-width: 100%; }
   transition: var(--transition);
   position: relative; z-index: 1;
 }
-.svc-icon i { font-size: 28px; color: white !important; transition: var(--transition); }
+.svc-icon i { font-size: 28px; color: white ; transition: var(--transition); }
 .svc-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; position: relative; z-index: 1; }
 .svc-desc { font-size: 14px; color: var(--text-light); line-height: 1.7; position: relative; z-index: 1; }
 .svc-link { font-size: 13px; font-weight: 600; color: var(--yellow); text-decoration: none; margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); position: relative; z-index: 1; }
