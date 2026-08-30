@@ -505,7 +505,7 @@ img { max-width: 100%; }
 }
 .btn-pricing:hover, .pricing-card.popular .btn-pricing {
   background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
-  color: var(--yellow-light);
+  color: white;
   box-shadow: 0 8px 30px rgba(241, 180, 47,0.4);
   transform: translateY(-1px);
 }
