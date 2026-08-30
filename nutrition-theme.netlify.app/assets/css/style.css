@@ -505,9 +505,10 @@ img { max-width: 100%; }
 }
 .btn-pricing:hover, .pricing-card.popular .btn-pricing {
   background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
-  color: white;
-  box-shadow: 0 8px 30px rgba(241, 180, 47,0.4);
-  transform: translateY(-1px);
+  color: white !important;
+  box-shadow:  0 0 15px rgba(245, 200, 75, 0.55),
+    0 8px 30px rgba(212, 157, 15, 0.40);
+  transform: translateY(-2px);
 }
 
 /* ========== RECIPES / BLOG ========== */
