@@ -430,7 +430,7 @@ img { max-width: 100%; }
   opacity: 0;
   transition: var(--transition);
 }
-.service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(213, 157, 15, 0.4); border-color: var(--yellow-light); }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(213, 157, 15, 0.40); border-color: var(--yellow); }
 .service-card:hover::before { opacity: 1; }
 .service-card:hover .svc-icon { transform: scale(1.1); background: var(--yellow-light); }
 .service-card:hover .svc-icon i { color: white; }
@@ -450,7 +450,7 @@ img { max-width: 100%; }
 .svc-link:hover { gap: 10px; color: var(--yellow-light); }
 
 /* ========== PRICING ========== */
-#pricing { background: var(--blue-dark); }
+#pricing { background: white; }
 .pricing-card {
   background: var(--blue-dark);
   border-radius: var(--radius-lg);
