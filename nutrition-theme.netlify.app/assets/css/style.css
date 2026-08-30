@@ -451,6 +451,8 @@ img { max-width: 100%; }
 
 /* ========== PRICING ========== */
 #pricing { background: white; }
+#pricing .section-sub { color: var(--blue-dark); }
+#pricing .divider-leaf { background: var(--yellow); }
 .pricing-card {
   background: var(--blue-dark);
   border-radius: var(--radius-lg);
