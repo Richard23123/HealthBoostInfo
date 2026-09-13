@@ -188,7 +188,6 @@
   </section>
 
   <!-- SVG Divider -->
-  
 <!-- ========== SERVICES ========== -->
 <section id="services" class="services-section-new">
   <div class="container">
@@ -323,9 +322,10 @@
   line-height: 1.7;
 }
 
+/* CAMBIO PRINCIPAL: Grid de 2 columnas */
 .services-grid-new {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
@@ -343,15 +343,15 @@
   box-shadow: 0 25px 50px rgba(232, 185, 35, 0.25);
 }
 
-/* Full Width Card */
+/* Full Width Card - Ocupa las 2 columnas */
 .full-width-new {
-  grid-column: span 3;
+  grid-column: span 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
 
-/* Half Width Cards - Ahora con imagen */
+/* Half Width Cards - Cada una ocupa 1 columna */
 .half-width-new {
   grid-column: span 1;
   display: grid;
@@ -387,6 +387,15 @@
   color: white;
 }
 
+.half-width-new .service-icon-new {
+  width: 60px;
+  height: 60px;
+}
+
+.half-width-new .service-icon-new i {
+  font-size: 26px;
+}
+
 .service-category-new {
   color: #e8b923;
   font-size: 13px;
@@ -409,7 +418,7 @@
 }
 
 .half-width-new .service-title-card-new {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .service-desc-new {
@@ -417,6 +426,11 @@
   color: #6b7280;
   line-height: 1.8;
   margin-bottom: 25px;
+}
+
+.half-width-new .service-desc-new {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .learn-more-new {
@@ -428,6 +442,10 @@
   font-size: 15px;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.half-width-new .learn-more-new {
+  font-size: 14px;
 }
 
 .learn-more-new i {
@@ -443,7 +461,6 @@
 .service-image-new {
   position: relative;
   height: 100%;
-  min-height: 400px;
   overflow: hidden;
 }
 
@@ -453,7 +470,7 @@
 }
 
 .half-width-new .service-image-new {
-  min-height: 250px;
+  min-height: 280px;
   border-radius: 0 18px 18px 0;
 }
 
@@ -545,15 +562,6 @@
 
   .service-title-card-new {
     font-size: 22px;
-  }
-
-  .service-icon-new {
-    width: 60px;
-    height: 60px;
-  }
-
-  .service-icon-new i {
-    font-size: 26px;
   }
 }
 </style>
