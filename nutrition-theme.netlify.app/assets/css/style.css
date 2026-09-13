@@ -331,7 +331,7 @@ img { max-width: 100%; }
   margin-bottom: 16px;
 }
 .section-title {
-  font-size: clamp(32px, 4vw,32px);
+  font-size: clamp(50px, 4vw,32px);
   font-weight: 900;
   color: var(--blue-dark);
   line-height: 1.15;
