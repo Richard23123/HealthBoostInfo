@@ -360,7 +360,7 @@ img { max-width: 100%; }
 }
 .about-img {
   border-radius: var(--radius-lg);
-  width: 100%;
+  width: 140%;
   box-shadow: var(--shadow-lg);
   object-fit: cover;
  
