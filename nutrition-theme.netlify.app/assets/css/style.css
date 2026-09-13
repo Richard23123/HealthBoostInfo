@@ -146,14 +146,14 @@ img { max-width: 100%; }
   min-height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/home pilates.jpg') center/cover no-repeat;
 }
 
 .page-hero{   position: relative;
   min-height: 60vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/home pilates.jpg') center/cover no-repeat;
 }
 /* ========== HERO ========== */
 #hero {
@@ -161,11 +161,11 @@ img { max-width: 100%; }
   min-height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/home pilates.jpg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/Home pilates.jpg') center/cover no-repeat;
 }
 .hero-content { position: relative; z-index: 2; }
 .hero-badge {
