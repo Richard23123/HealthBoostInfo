@@ -29,7 +29,7 @@ html, body {
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
+  color: var(--yellow-light);
   background: var(--yellow);
   overflow-x: hidden;
 }
