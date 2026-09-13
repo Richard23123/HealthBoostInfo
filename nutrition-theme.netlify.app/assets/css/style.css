@@ -107,7 +107,7 @@ img { max-width: 100%; }
 .navbar-brand span { color: var(--yellow-light); }
 #mainNav.scrolled .navbar-brand span { color: var(--yellow-light); }
 .nav-link {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
