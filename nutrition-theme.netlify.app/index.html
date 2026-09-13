@@ -22,6 +22,7 @@
   <link href="assets/css/aos.css" rel="stylesheet">
   <!-- Swiper -->
   <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <!-- Icons -->
   <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
@@ -789,107 +790,358 @@
   margin-left: 2px;
 }
 </style>
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section-pad">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <div class="section-tag">LET’S GET STARTED</div>
-        <h2 class="section-title">Your Wellness  <span>Journey Starts </span> Here</h2>
-        <p class="section-sub">Ready to take the first step towards a healthier you? Fill out the form below and we’ll get in touch!</p>
-        <div class="divider-leaf"></div>
-      </div>
-      <div class="row g-5">
-        <div class="col-lg-7" data-aos="fade-right">
+ <!-- ========== CONTACT ========== -->
+<section id="contact" class="section-pad contact-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">LET'S GET STARTED</div>
+      <h2 class="section-title">Your Wellness <span>Journey Starts</span> Here</h2>
+      <p class="section-sub">Have questions about HealthBoost? Tell us what you're looking for and discover how our nutrition, mental wellness, and physical activity services can support your goals.</p>
+      <div class="divider-leaf"></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- COLUMNA IZQUIERDA: Formulario -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="contact-form-card">
+          <h3 class="card-title">Get in Touch</h3>
+          <p class="card-subtitle">We'd love to hear from you. Fill out the form and we'll get back to you soon.</p>
+          
           <form id="contactForm">
             <div class="row g-3">
               <div class="col-md-6">
-                <div class="form-floating-custom">
-                  <input type="text" id="fname" placeholder=" " required>
+                <div class="form-group-custom">
+                  <input type="text" id="fname" class="form-control-custom" placeholder=" " required>
                   <label for="fname">First Name</label>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-floating-custom">
-                  <input type="text" id="lname" placeholder=" " required>
+                <div class="form-group-custom">
+                  <input type="text" id="lname" class="form-control-custom" placeholder=" " required>
                   <label for="lname">Last Name</label>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-floating-custom">
-                  <input type="email" id="email" placeholder=" " required>
+                <div class="form-group-custom">
+                  <input type="email" id="email" class="form-control-custom" placeholder=" " required>
                   <label for="email">Email Address</label>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-floating-custom">
-                  <input type="tel" id="phone" placeholder=" ">
+                <div class="form-group-custom">
+                  <input type="tel" id="phone" class="form-control-custom" placeholder=" ">
                   <label for="phone">Phone Number</label>
                 </div>
               </div>
               <div class="col-12">
-                <div class="form-floating-custom">
-                  <select id="program" style="padding:14px 16px; appearance:auto; cursor:pointer;">
-                    <option value="">I'm interested in...</option>
-                    <option>Weight Loss Program</option>
-                    <option>Muscle Gain Plan</option>
-                    <option>Diabetic Diet Plan</option>
-                    <option>Vegan Nutrition</option>
-                    <option>Detox Program</option>
-                    <option>Custom Meal Planning</option>
+                <div class="form-group-custom">
+                  <select id="program" class="form-control-custom" required>
+                    <option value="" disabled selected>I'm interested in...</option>
+                    <option value="nutrition">Nutrition</option>
+                    <option value="mental">Mental Wellness</option>
+                    <option value="physical">Physical Activity</option>
+                    <option value="membership">Membership Plans</option>
+                    <option value="partnerships">Gym & Wellness Partnerships</option>
+                    <option value="general">General Information</option>
                   </select>
                 </div>
               </div>
               <div class="col-12">
-                <div class="form-floating-custom">
-                  <textarea id="message" placeholder=" "></textarea>
-                  <label for="message">Tell us about your health goals...</label>
+                <div class="form-group-custom">
+                  <textarea id="message" class="form-control-custom" rows="4" placeholder=" " required></textarea>
+                  <label for="message">How can we help you?</label>
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn-submit">
-                  <i class="far fa-calendar-check me-2"></i>Send Message →
+                <button type="submit" class="btn-submit-custom">
+                  Send Message <i class="fas fa-arrow-right ms-2"></i>
                 </button>
               </div>
             </div>
           </form>
-          <div id="formSuccess"
-            style="display:none; background:var(--green-pale); border:1px solid var(--green-light); border-radius:var(--radius); padding:20px; margin-top:16px; color:var(--green-dark); font-weight:600;">
-            <i class="fas fa-check-circle me-2"></i>Thank you! We'll contact you within 24 hours to confirm your
-            consultation.
+          
+          <div id="formSuccess" class="success-message">
+            <i class="fas fa-check-circle me-2"></i>Thank you! Your message has been sent.
           </div>
         </div>
-        <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
-          <div class="contact-info-item">
-            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <div class="ci-label">L📍 BASED IN</div>
-              <div class="ci-val">Costa Verde, La Chorrera, Panama</div>
-            </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: Mapa y Ubicación Destacada -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="wellness-map-card">
+          <h3 class="card-title">Explore Wellness Near You</h3>
+          <p class="card-subtitle">Discover gyms, parks and active spaces around La Chorrera.</p>
+          
+          <div class="map-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="gym">Partner Gyms</button>
+            <button class="filter-btn" data-filter="park">Parks</button>
+            <button class="filter-btn" data-filter="sports">Sports Areas</button>
+            <button class="filter-btn" data-filter="other">Other</button>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <div class="ci-label">Email</div>
-              <div class="ci-val">healthboost@gmail.com</div>
+
+          <div id="wellnessMap"></div>
+
+          <div class="location-card">
+            <div class="location-img">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&h=200&fit=crop" alt="Jiva Gym">
             </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-icon"><i class="far fa-clock"></i></div>
-            <div>
-              <div class="ci-label">Hours</div>
-              <div class="ci-val">24/7 Online Support </div>
+            <div class="location-info">
+              <div class="location-badge">Partner Gym</div>
+              <h4 class="location-name">Jiva Gym</h4>
+              <p class="location-address"><i class="fas fa-map-marker-alt me-1"></i> Costa Verde, La Chorrera</p>
+              <p class="location-desc">Accessible training environment and fitness options for different levels.</p>
+              <a href="https://maps.google.com/?q=Costa+Verde+La+Chorrera+Panama" target="_blank" class="btn-location">
+                View Location <i class="fas fa-external-link-alt ms-1"></i>
+              </a>
             </div>
-          </div>
-          <div class="map-embed">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215685185413!2d-73.98656892451387!3d40.75798147138796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2590036f1bce1%3A0x7de93ee33e0a8d2f!2sMidtown%20Manhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1706547832000!5m2!1sen!2sus"
-              height="220" style="border:0;width: 100%;;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- CSS personalizado para la sección Contact -->
+<style>
+/* ========== CONTACT SECTION STYLES ========== */
+.contact-section .section-tag {
+  color: var(--gold, #e8b923);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.contact-section .section-title span {
+  color: var(--gold, #e8b923);
+}
+
+.contact-form-card, .wellness-map-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(26, 26, 46, 0.08);
+  height: 100%;
+  border: 1px solid rgba(26, 26, 46, 0.05);
+}
+
+.card-title {
+  font-size: 24px;
+  color: var(--navy, #1a1a2e);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.form-group-custom {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.form-control-custom {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--navy, #1a1a2e);
+  background: #fafafa;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-control-custom:focus {
+  border-color: var(--gold, #e8b923);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(232, 185, 35, 0.15);
+}
+
+.form-group-custom label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  font-size: 15px;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: transparent;
+  padding: 0 4px;
+}
+
+.form-control-custom:focus + label,
+.form-control-custom:not(:placeholder-shown) + label,
+select.form-control-custom + label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--gold, #e8b923);
+  background: #ffffff;
+  font-weight: 600;
+}
+
+textarea.form-control-custom {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-submit-custom {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--gold, #e8b923);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.btn-submit-custom:hover {
+  background: #d4a71f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(232, 185, 35, 0.3);
+}
+
+.success-message {
+  display: none;
+  background: rgba(232, 185, 35, 0.1);
+  border: 1px solid var(--gold, #e8b923);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 20px;
+  color: var(--navy, #1a1a2e);
+  font-weight: 600;
+  text-align: center;
+}
+
+.map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1.5px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--navy, #1a1a2e);
+  color: var(--navy, #1a1a2e);
+}
+
+.filter-btn.active {
+  background: var(--navy, #1a1a2e);
+  color: #ffffff;
+  border-color: var(--navy, #1a1a2e);
+}
+
+#wellnessMap {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.location-card {
+  display: flex;
+  gap: 16px;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  align-items: center;
+}
+
+.location-img img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-badge {
+  display: inline-block;
+  background: var(--navy, #1a1a2e);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.location-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy, #1a1a2e);
+  margin: 0 0 4px 0;
+}
+
+.location-address {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 6px 0;
+}
+
+.location-desc {
+  font-size: 13px;
+  color: #4b5563;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.btn-location {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold, #e8b923);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn-location:hover {
+  color: #d4a71f;
+  text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  .contact-form-card, .wellness-map-card {
+    margin-bottom: 20px;
+  }
+  .location-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
 
  <!-- ========== FOOTER ========== -->
   <footer>
@@ -955,6 +1207,92 @@
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Inicializar mapa centrado en La Chorrera, Panamá
+  const map = L.map('wellnessMap').setView([8.8667, -79.6500], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Función para crear íconos personalizados
+  function createCustomIcon(iconClass, bgColor) {
+    return L.divIcon({
+      className: 'custom-map-marker',
+      html: `<div style="background-color: ${bgColor}; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+               <i class="fas ${iconClass}" style="color: white; font-size: 16px;"></i>
+             </div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 36],
+      popupAnchor: [0, -36]
+    });
+  }
+
+  // Datos de los lugares (fácil de editar)
+  const locations = [
+    { name: "Jiva Gym", category: "gym", lat: 8.8680, lng: -79.6520, icon: "fa-dumbbell", color: "#1a1a2e", desc: "Gimnasio partner" },
+    { name: "Parque Central", category: "park", lat: 8.8650, lng: -79.6480, icon: "fa-tree", color: "#2a9d8f", desc: "Parque para ejercicios" },
+    { name: "Cancha Costa Verde", category: "sports", lat: 8.8700, lng: -79.6550, icon: "fa-basketball-ball", color: "#e76f51", desc: "Área deportiva" },
+    { name: "Centro Bienestar", category: "other", lat: 8.8640, lng: -79.6510, icon: "fa-spa", color: "#6c757d", desc: "Bienestar mental" }
+  ];
+
+  // Agregar marcadores
+  const markers = {};
+  
+  locations.forEach(loc => {
+    const marker = L.marker([loc.lat, loc.lng], {
+      icon: createCustomIcon(loc.icon, loc.color)
+    }).bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
+    
+    if (!markers[loc.category]) markers[loc.category] = [];
+    markers[loc.category].push(marker);
+    marker.addTo(map);
+  });
+
+  // Filtros del mapa
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      const filter = this.getAttribute('data-filter');
+      
+      for (const [category, markerArray] of Object.entries(markers)) {
+        if (filter === 'all' || category === filter) {
+          markerArray.forEach(m => { if (!map.hasLayer(m)) map.addLayer(m); });
+        } else {
+          markerArray.forEach(m => { if (map.hasLayer(m)) map.removeLayer(m); });
+        }
+      }
+    });
+  });
+
+  // Formulario
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.btn-submit-custom');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+        contactForm.reset();
+      }, 1500);
+    });
+  }
+});
+</script>
 </body>
 
 <!-- Mirrored from nutrition-theme.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jun 2026 16:21:51 GMT -->
