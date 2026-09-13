@@ -1214,7 +1214,7 @@ textarea.form-control-custom {
 document.addEventListener('DOMContentLoaded', function() {
   
   // Inicializar mapa centrado en La Chorrera, Panamá
-  const map = L.map('wellnessMap').setView([8.8667, -79.6500], 14);
+ const map = L.map('wellnessMap').setView([8.8833, -79.7833], 14);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
@@ -1235,13 +1235,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Datos de los lugares (fácil de editar)
-  const locations = [
-    { name: "Jiva Gym", category: "gym", lat: 8.8680, lng: -79.6520, icon: "fa-dumbbell", color: "#1a1a2e", desc: "Gimnasio partner" },
-    { name: "Parque Central", category: "park", lat: 8.8650, lng: -79.6480, icon: "fa-tree", color: "#2a9d8f", desc: "Parque para ejercicios" },
-    { name: "Cancha Costa Verde", category: "sports", lat: 8.8700, lng: -79.6550, icon: "fa-basketball-ball", color: "#e76f51", desc: "Área deportiva" },
-    { name: "Centro Bienestar", category: "other", lat: 8.8640, lng: -79.6510, icon: "fa-spa", color: "#6c757d", desc: "Bienestar mental" }
-  ];
-
+const locations = [
+  { name: "Jiva Gym", category: "gym", lat: 8.8833, lng: -79.7833, icon: "fa-dumbbell", color: "#1a1a2e", desc: "Gimnasio partner" },
+  { name: "Parque Central La Chorrera", category: "park", lat: 8.8850, lng: -79.7850, icon: "fa-tree", color: "#2a9d8f", desc: "Parque para ejercicios" },
+  { name: "Cancha Costa Verde", category: "sports", lat: 8.8820, lng: -79.7810, icon: "fa-basketball-ball", color: "#e76f51", desc: "Área deportiva" },
+  { name: "Centro Bienestar", category: "other", lat: 8.8840, lng: -79.7820, icon: "fa-spa", color: "#6c757d", desc: "Bienestar mental" }
+];
   // Agregar marcadores
   const markers = {};
   
