@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <!-- Icons -->
   <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
   <!-- ========== PRELOADER ========== -->
@@ -879,8 +878,17 @@
             <button class="filter-btn" data-filter="sports">Sports Areas</button>
             <button class="filter-btn" data-filter="other">Other</button>
           </div>
-
-          <div id="wellnessMap"></div>
+<div class="google-map-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31648.123456789!2d-79.7833!3d8.8833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgyms%20La%20Chorrera%20Panama!5e0!3m2!1ses!2spa!4v1234567890"
+    width="100%" 
+    height="350" 
+    style="border:0; border-radius: 12px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
 
           <div class="location-card">
             <div class="location-img">
@@ -1141,6 +1149,12 @@ textarea.form-control-custom {
     text-align: center;
   }
 }
+.google-map-container {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
 </style>
 
  <!-- ========== FOOTER ========== -->
@@ -1207,91 +1221,6 @@ textarea.form-control-custom {
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
-  <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // Inicializar mapa centrado en La Chorrera, Panamá
- const map = L.map('wellnessMap').setView([8.8833, -79.7833], 14);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-  }).addTo(map);
-
-  // Función para crear íconos personalizados
-  function createCustomIcon(iconClass, bgColor) {
-    return L.divIcon({
-      className: 'custom-map-marker',
-      html: `<div style="background-color: ${bgColor}; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-               <i class="fas ${iconClass}" style="color: white; font-size: 16px;"></i>
-             </div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -36]
-    });
-  }
-
-  // Datos de los lugares (fácil de editar)
-const locations = [
-  { name: "Jiva Gym", category: "gym", lat: 8.8833, lng: -79.7833, icon: "fa-dumbbell", color: "#1a1a2e", desc: "Gimnasio partner" },
-  { name: "Parque Central La Chorrera", category: "park", lat: 8.8850, lng: -79.7850, icon: "fa-tree", color: "#2a9d8f", desc: "Parque para ejercicios" },
-  { name: "Cancha Costa Verde", category: "sports", lat: 8.8820, lng: -79.7810, icon: "fa-basketball-ball", color: "#e76f51", desc: "Área deportiva" },
-  { name: "Centro Bienestar", category: "other", lat: 8.8840, lng: -79.7820, icon: "fa-spa", color: "#6c757d", desc: "Bienestar mental" }
-];
-  // Agregar marcadores
-  const markers = {};
-  
-  locations.forEach(loc => {
-    const marker = L.marker([loc.lat, loc.lng], {
-      icon: createCustomIcon(loc.icon, loc.color)
-    }).bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
-    
-    if (!markers[loc.category]) markers[loc.category] = [];
-    markers[loc.category].push(marker);
-    marker.addTo(map);
-  });
-
-  // Filtros del mapa
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      const filter = this.getAttribute('data-filter');
-      
-      for (const [category, markerArray] of Object.entries(markers)) {
-        if (filter === 'all' || category === filter) {
-          markerArray.forEach(m => { if (!map.hasLayer(m)) map.addLayer(m); });
-        } else {
-          markerArray.forEach(m => { if (map.hasLayer(m)) map.removeLayer(m); });
-        }
-      }
-    });
-  });
-
-  // Formulario
-  const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btn = contactForm.querySelector('.btn-submit-custom');
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
-      btn.disabled = true;
-
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-        contactForm.reset();
-      }, 1500);
-    });
-  }
-});
-</script>
 </body>
 
 <!-- Mirrored from nutrition-theme.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jun 2026 16:21:51 GMT -->
