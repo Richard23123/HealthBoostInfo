@@ -29,7 +29,7 @@ html, body {
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
+  color: var(--yellow-light);
   background: var(--yellow);
   overflow-x: hidden;
 }
@@ -107,7 +107,7 @@ img { max-width: 100%; }
 .navbar-brand span { color: var(--yellow-light); }
 #mainNav.scrolled .navbar-brand span { color: var(--yellow-light); }
 .nav-link {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -146,14 +146,14 @@ img { max-width: 100%; }
   min-height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/degradado.jpg') center/cover no-repeat;
 }
 
 .page-hero{   position: relative;
   min-height: 60vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/degradado.jpg') center/cover no-repeat;
 }
 /* ========== HERO ========== */
 #hero {
@@ -161,11 +161,11 @@ img { max-width: 100%; }
   min-height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/degradado.jpg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: url('../images/home.png') center/cover no-repeat;
+  background: url('../images/degradado.jpg') center/cover no-repeat;
 }
 .hero-content { position: relative; z-index: 2; }
 .hero-badge {
@@ -331,7 +331,7 @@ img { max-width: 100%; }
   margin-bottom: 16px;
 }
 .section-title {
-  font-size: clamp(32px, 4vw,32px);
+  font-size: clamp(50px, 4vw,32px);
   font-weight: 900;
   color: var(--blue-dark);
   line-height: 1.15;
@@ -360,7 +360,7 @@ img { max-width: 100%; }
 }
 .about-img {
   border-radius: var(--radius-lg);
-  width: 100%;
+  width: 140%;
   box-shadow: var(--shadow-lg);
   object-fit: cover;
  
@@ -411,13 +411,13 @@ img { max-width: 100%; }
 .progress-bar-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--yellow), var(--yellow-light)); width: 0; transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 /* ========== SERVICES ========== */
-#services { background: var(--white); }
+#services { background: var(--blue-dark); }
 .service-card {
   background: var(--white);
   border-radius: var(--radius);
   padding: 40px 30px;
   text-align: center;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #ffc107;
   transition: var(--transition);
   height: 100%;
   position: relative;
@@ -426,7 +426,7 @@ img { max-width: 100%; }
 .service-card::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(180deg,  rgba(245, 200, 75, 0.30) 0%, rgba(245, 200, 75, 0.12) 45%,, transparent);
+  background: linear-gradient(180deg,  rgba(245, 200, 75, 0.30) 0%, rgba(245, 200, 75, 0.12) 45%, transparent);
   opacity: 0;
   transition: var(--transition);
    pointer-events: none;
