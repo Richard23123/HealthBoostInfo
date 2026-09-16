@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete vegan nutrition program: plant‑based meal plans, expert guidance on essential nutrients (B12, iron, omega‑3), and sustainable health.">
+  <title>Questionnarie — HealthBoost</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/images/nutrition-plan.png">
+  <!-- Bootstrap 5 -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS -->
+<link href="assets/css/aos.css" rel="stylesheet">
+
+<!-- Swiper -->
+<link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HealthBoost — Perfil y recomendaciones</title>
@@ -125,12 +146,37 @@ main{max-width:760px;margin:0 auto;padding:32px 24px 64px}
 }
 </style>
 </head>
-<body>
 
+<body>
+<!-- ========== PRELOADER (same) ========== -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="leaf-anim">
+      <img src="assets/images/HEALTHBOOST logo.jpg" alt="Animación" width="60" height="60">
+        <path d="M30 8C30 8 10 18 10 35C10 45.5 19 52 30 52C41 52 50 45.5 50 35C50 18 30 8 30 8Z" fill="#4CAF50" opacity="0.9"/>
+        <path d="M30 8C30 8 18 26 22 42" stroke="#81C784" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="52" x2="30" y2="58" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="30" y1="56" x2="24" y2="60" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="56" x2="36" y2="60" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p>HealthBoost</p>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR (exact copy) ========== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class='navbar-brand' href='index.html'>Health<span>Boost</span></a>
+      <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <div class="hamburger-icon p-2">
+          <span></span><span></span><span></span>
+        </div>
+    </div>
+  </nav>
 <header>
-  <div class="logo">
-    <div class="logo-box"><span>H</span></div>
-    <span class="logo-name">HEALTHBOOST</span>
+    <span class="logo-name"></span>
   </div>
   <span class="step-label" id="stepLabel"></span>
 </header>
@@ -160,23 +206,23 @@ main{max-width:760px;margin:0 auto;padding:32px 24px 64px}
    type: single (una opción) | multi (varias) | number | text | scale
 ============================================================ */
 const QUESTIONS = [
-  { label:"objetivo",            cat:"objetivos",   icon:"🎯", text:"¿Cuál es tu objetivo principal?", help:"Elige el que más te resuene ahora mismo", type:"single",
+  { label:"objetivo",            cat:"objetivos",    text:"¿Cuál es tu objetivo principal?", help:"Elige el que más te resuene ahora mismo", type:"single",
     options:["Bajar de peso","Ganar masa muscular","Mantenerme saludable","Mejorar mi energía diaria","Controlar una condición de salud"] },
-  { label:"peso_kg",             cat:"objetivos",   icon:"🎯", text:"¿Cuánto pesas actualmente?", help:"En kilogramos", type:"number" },
-  { label:"altura_cm",           cat:"objetivos",   icon:"🎯", text:"¿Cuál es tu altura?", help:"En centímetros", type:"number" },
-  { label:"dieta",               cat:"nutricion",   icon:"🍎", text:"¿Qué tipo de dieta prefieres?", type:"single",
+  { label:"peso_kg",             cat:"objetivos",   text:"¿Cuánto pesas actualmente?", help:"En kilogramos", type:"number" },
+  { label:"altura_cm",           cat:"objetivos",   text:"¿Cuál es tu altura?", help:"En centímetros", type:"number" },
+  { label:"dieta",               cat:"nutricion",   text:"¿Qué tipo de dieta prefieres?", type:"single",
     options:["Omnívora (como de todo)","Vegetariana","Vegana","Sin gluten","Baja en carbohidratos","No tengo preferencia"] },
-  { label:"alergias",            cat:"nutricion",   icon:"🍎", text:"¿Tienes alguna alergia o intolerancia alimentaria?", help:"Separa varias con comas. Si no, escribe \"Ninguna\"", type:"text" },
-  { label:"comidas_por_dia",     cat:"nutricion",   icon:"🍎", text:"¿Cuántas comidas haces al día?", type:"single",
+  { label:"alergias",            cat:"nutricion",   text:"¿Tienes alguna alergia o intolerancia alimentaria?", help:"Separa varias con comas. Si no, escribe \"Ninguna\"", type:"text" },
+  { label:"comidas_por_dia",     cat:"nutricion",   text:"¿Cuántas comidas haces al día?", type:"single",
     options:["1-2 comidas","3 comidas","4-5 comidas","Más de 5"] },
-  { label:"nivel_actividad",     cat:"actividad",   icon:"💪", text:"¿Cuál es tu nivel actual de actividad física?", type:"single",
+  { label:"nivel_actividad",     cat:"actividad",   text:"¿Cuál es tu nivel actual de actividad física?", type:"single",
     options:["Sedentario (casi nada)","Ligero (1-2 veces/semana)","Moderado (3-4 veces/semana)","Activo (5+ veces/semana)"] },
-  { label:"actividades_favoritas",cat:"actividad",  icon:"💪", text:"¿Qué tipos de actividad disfrutas?", help:"Puedes elegir varias", type:"multi",
+  { label:"actividades_favoritas",cat:"actividad",   text:"¿Qué tipos de actividad disfrutas?", help:"Puedes elegir varias", type:"multi",
     options:["Gimnasio / pesas","Cardio (correr, bici)","Yoga / pilates","Deportes de equipo","Natación","Caminar / senderismo","Baile"] },
-  { label:"horas_sueno",         cat:"estilo_vida", icon:"🌙", text:"¿Cuántas horas duermes en promedio?", help:"Por noche", type:"number" },
-  { label:"nivel_estres",        cat:"estilo_vida", icon:"🌙", text:"¿Cómo calificarías tu nivel de estrés?", help:"1 = muy bajo, 5 = muy alto", type:"scale" },
-  { label:"condicion_medica",    cat:"salud",       icon:"❤️", text:"¿Tienes alguna condición médica que debamos considerar?", help:"Ej: diabetes, hipertensión, tiroides. Si no, escribe \"Ninguna\"", type:"text" },
-  { label:"medicamentos",        cat:"salud",       icon:"❤️", text:"¿Tomas algún medicamento o suplemento regularmente?", help:"Si no, escribe \"Ninguno\"", type:"text" }
+  { label:"horas_sueno",         cat:"estilo_vida",  text:"¿Cuántas horas duermes en promedio?", help:"Por noche", type:"number" },
+  { label:"nivel_estres",        cat:"estilo_vida",  text:"¿Cómo calificarías tu nivel de estrés?", help:"1 = muy bajo, 5 = muy alto", type:"scale" },
+  { label:"condicion_medica",    cat:"salud",        text:"¿Tienes alguna condición médica que debamos considerar?", help:"Ej: diabetes, hipertensión, tiroides. Si no, escribe \"Ninguna\"", type:"text" },
+  { label:"medicamentos",        cat:"salud",        text:"¿Tomas algún medicamento o suplemento regularmente?", help:"Si no, escribe \"Ninguno\"", type:"text" }
 ];
 
 const CAT_LABEL = { objetivos:"Objetivos", nutricion:"Nutrición", actividad:"Actividad", estilo_vida:"Estilo de vida", salud:"Salud" };
@@ -431,6 +477,116 @@ function exportJSON(){
   }
   render();
 })();
+  // ---- PRELOADER ----
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('fade-out');
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => { document.body.style.opacity = '1'; }, 100);
+    }, 1800);
+  });
+
+  // ---- AOS INIT ----
+  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  // ---- NAVBAR SCROLL ----
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+
+  // ---- ACTIVE NAV LINK ----
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // ---- SMOOTH SCROLL ----
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 70;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        const collapse = document.getElementById('navMenu');
+        if (collapse.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(collapse).hide();
+        }
+      }
+    });
+  });
+
+  // ---- COUNTERS ----
+  function animateCount(el) {
+    const target = +el.getAttribute('data-count');
+    let count = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = Math.floor(count) + (el.closest('#stats') ? '' : '+');
+      if (count >= target) clearInterval(timer);
+    }, 25);
+  }
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        animateCount(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ---- SWIPER ----
+  new Swiper('.swiper-testimonials', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: { 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 2 } }
+  });
+
+  // ---- FORM ----
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fields = this.querySelectorAll('input[required], textarea[required]');
+    let valid = true;
+    fields.forEach(f => {
+      if (!f.value.trim()) {
+        valid = false;
+        f.style.borderColor = '#e74c3c';
+        setTimeout(() => { f.style.borderColor = ''; }, 2000);
+      }
+    });
+    if (valid) {
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  });
+
+  // ---- PARALLAX HERO ----
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.program-hero');
+    if (hero) hero.style.backgroundPositionY = (window.scrollY * 0.4) + 'px';
+  });
 </script>
 </body>
+
 </html>
