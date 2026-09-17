@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HEALTHBOOST Mind & Balance area for emotional wellness, stress support, habits and sessions with specialists.">
+  <title>Mind & Balance - HEALTHBOOST</title>
+  <link rel="icon" href="assets/images/descarga.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="preloader"><div class="preloader-inner"><div class="leaf-anim"><i class="fas fa-spa"></i></div><p>HEALTHBOOST</p><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+  <!-- ========== NAVBAR ========== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html#hero">HEALTH<span>BOOST</span></a>
+      <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <div class="hamburger-icon p-2"><span></span><span></span><span></span></div>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION</a></li>
+          <li class="nav-item"><a class="nav-link" href="mental-wellness.html">MENTAL WELLNESS</a></li>
+          <li class="nav-item"><a class="nav-link" href="physical-activity.html">PHYSICAL ACTIVITY</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link login-pill" href="login.html?next=cuestionario.html"><i class="far fa-user"></i> LOG IN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="site-hero page-hero">
+    <div class="container hero-content">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="hero-badge"><i class="fas fa-heart"></i> MIND & BALANCE</div>
+          <h1 class="hero-title">Support your emotional wellness with small, repeatable practices.</h1>
+          <p class="hero-sub">Set a goal, explore short resources, and schedule support with professionals when you need a guided next step.</p>
+          <div class="hero-actions"><a class="btn-main" href="#my-goal">Update goal</a><a class="btn-ghost" href="#book-session">Book a session</a></div>
+        </div>
+        <div class="col-lg-5">
+          <div class="image-slot">
+            <img src="mental-wellness-hero.jpg" alt="Reserved hero image space for mental wellness">
+            <div class="slot-empty"><div><strong>Mind & Balance image placeholder</strong>Replace with mental-wellness-hero.jpg</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="my-goal" class="section-pad">
+    <div class="container">
+      <div class="goal-layout">
+        <div>
+          <div class="section-tag">My goal</div>
+          <h2 class="section-title">Your current wellness goal.</h2>
+          <p class="section-sub">Keep this simple. A small goal is easier to repeat and easier to adjust.</p>
+        </div>
+        <div class="goal-card">
+          <div class="card-kicker">Current goal</div>
+          <div id="goalQuote" class="goal-quote">"Reduce my stress"</div>
+          <p id="goalProgressLabel" class="card-text">Progress: 3/7 days</p>
+          <div class="progress-track mb-4"><div class="progress-fill" style="--progress:42%"></div></div>
+          <form id="goalForm">
+            <label class="form-label" for="goalInput">Update goal</label>
+            <input class="form-control-hb mb-3" id="goalInput" type="text" placeholder="Reduce my stress">
+            <label class="form-label" for="goalProgress">Progress days</label>
+            <input class="form-control-hb mb-3" id="goalProgress" type="number" min="0" max="7" value="3">
+            <button class="btn-soft" type="submit">Update goal</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="section-pad page-band">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Wellness resource library</div>
+        <h2 class="section-title">Quick practices by category</h2>
+        <p class="section-sub">Open a resource, follow the steps and mark it completed. The structure is ready to expand later.</p>
+      </div>
+      <div class="resource-list">
+        <article class="resource-card open">
+          <button class="resource-toggle" type="button"><span>Breathing technique for stress moments</span><i class="fas fa-chevron-down"></i></button>
+          <div class="resource-body">
+            <p><strong>Explanation:</strong> A slow breathing cycle gives your body a clear signal to reduce tension.</p>
+            <ul class="clean-list"><li>Inhale for four counts.</li><li>Hold for two counts.</li><li>Exhale for six counts.</li><li>Repeat five rounds.</li></ul>
+            <div class="resource-meta"><span>Estimated time: 3 minutes</span><span>Category: Stress support</span></div>
+            <button class="btn-small mark-complete" type="button">Mark as Completed</button>
+          </div>
+        </article>
+        <article class="resource-card">
+          <button class="resource-toggle" type="button"><span>Small changes when motivation drops</span><i class="fas fa-chevron-down"></i></button>
+          <div class="resource-body">
+            <p><strong>Explanation:</strong> Motivation changes. A tiny action keeps identity and momentum alive.</p>
+            <ul class="clean-list"><li>Choose one action that takes under five minutes.</li><li>Do it at the same time today and tomorrow.</li><li>Track completion, not perfection.</li></ul>
+            <div class="resource-meta"><span>Estimated time: 5 minutes</span><span>Category: Consistency</span></div>
+            <button class="btn-small mark-complete" type="button">Mark as Completed</button>
+          </div>
+        </article>
+        <article class="resource-card">
+          <button class="resource-toggle" type="button"><span>Healthy routine reset</span><i class="fas fa-chevron-down"></i></button>
+          <div class="resource-body">
+            <p><strong>Explanation:</strong> Rest, time organization and routines make habits easier to maintain.</p>
+            <ul class="clean-list"><li>Pick a fixed sleep cue.</li><li>Prepare tomorrow's first wellness action.</li><li>Remove one unnecessary friction point.</li></ul>
+            <div class="resource-meta"><span>Estimated time: 10 minutes</span><span>Category: Habits</span></div>
+            <button class="btn-small mark-complete" type="button">Mark as Completed</button>
+          </div>
+        </article>
+        <article class="resource-card">
+          <button class="resource-toggle" type="button"><span>Recognize and express emotions</span><i class="fas fa-chevron-down"></i></button>
+          <div class="resource-body">
+            <p><strong>Explanation:</strong> Naming emotions can reduce overwhelm and make difficult situations easier to handle.</p>
+            <ul class="clean-list"><li>Name what you feel without judging it.</li><li>Write what triggered it.</li><li>Choose one supportive next action.</li></ul>
+            <div class="resource-meta"><span>Estimated time: 7 minutes</span><span>Category: Emotional care</span></div>
+            <button class="btn-small mark-complete" type="button">Mark as Completed</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="book-session" class="section-pad">
+    <div class="container" id="bookingApp">
+      <div class="section-header">
+        <div class="section-tag">Book a session</div>
+        <h2 class="section-title">Choose support that matches your need</h2>
+      </div>
+      <div class="booking-shell">
+        <aside class="booking-steps" aria-label="Booking steps">
+          <div class="booking-step active">Choose a specialist type</div>
+          <div class="booking-step">Choose your specialist</div>
+          <div class="booking-step">Choose a date</div>
+          <div class="booking-step">Choose a time</div>
+        </aside>
+        <div>
+          <div class="choice-grid mb-4">
+            <button class="choice-card session-type" data-type="psychology" type="button"><div class="card-kicker">Psychology</div><h3 class="card-title">Book a Psychology Session</h3><p>Talk with a psychologist about your emotional well-being, stress management and personal concerns.</p></button>
+            <button class="choice-card session-type" data-type="nutrition" type="button"><div class="card-kicker">Nutrition</div><h3 class="card-title">Book a Nutrition Session</h3><p>Meet with a nutritionist for guidance related to healthy eating and your nutrition goals.</p></button>
+          </div>
+          <div id="specialistStep" hidden>
+            <h3 class="card-title">Choose your specialist</h3>
+            <div id="specialistChoices" class="choice-grid mb-4"></div>
+          </div>
+          <div id="dateStep" hidden>
+            <h3 class="card-title">Choose a date</h3>
+            <div id="dateChoices" class="time-grid mb-4"></div>
+          </div>
+          <div id="timeStep" hidden>
+            <h3 class="card-title">Choose a time</h3>
+            <div id="timeChoices" class="time-grid mb-4"></div>
+          </div>
+          <div id="confirmStep" class="plan-card" hidden>
+            <div class="card-kicker">Session details</div>
+            <ul id="sessionDetails" class="clean-list"></ul>
+            <button id="confirmSession" class="btn-main mt-3" type="button">Confirm Session</button>
+          </div>
+          <div id="upcomingSession" class="upcoming-card"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad page-band">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our specialists</div>
+        <h2 class="section-title">HEALTHBOOST collaborators</h2>
+        <p class="section-sub">Profiles are generic placeholders until real professional information and photos are provided.</p>
+      </div>
+      <div class="specialist-grid">
+        <div class="specialist-card"><div class="photo-slot">Photo placeholder<br>psychologist-photo.jpg</div><h3 class="card-title">Specialist Name</h3><p>Psychologist</p><p>Prepared profile for emotional well-being and stress support.</p><a class="btn-small" href="#">View Profile</a></div>
+        <div class="specialist-card"><div class="photo-slot">Photo placeholder<br>nutritionist-photo.jpg</div><h3 class="card-title">Specialist Name</h3><p>Nutritionist</p><p>Prepared profile for healthy eating and nutrition goals.</p><a class="btn-small" href="#">View Profile</a></div>
+        <div class="specialist-card"><div class="photo-slot">Photo placeholder<br>wellness-guide-photo.jpg</div><h3 class="card-title">Specialist Name</h3><p>Wellness Guide</p><p>Prepared profile for habits, consistency and routines.</p><a class="btn-small" href="#">View Profile</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="content-media-grid">
+        <div class="content-stack"><div class="media-placeholder wide"><span>mind-journaling-wide.jpg<br>Journaling or reflection image</span></div><div class="detail-panel"><div class="section-tag">Daily check-in</div><h3>Pause, name, choose</h3><p>Pause for one minute, name what you are feeling and choose one supportive action. The goal is awareness, not perfect control.</p></div></div>
+        <div class="media-placeholder tall"><span>mind-calm-vertical.jpg<br>Vertical calm-space image</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5"><div class="footer-brand">HEALTH<span>BOOST</span></div><p class="footer-desc">Nutrition, mental balance and physical activity connected in one platform.</p></div>
+        <div class="col-6 col-lg-3"><div class="footer-title">Areas</div><ul class="footer-links"><li><a href="nutrition.html">Nutrition</a></li><li><a href="mental-wellness.html">Mind & Balance</a></li><li><a href="physical-activity.html">Physical Activity</a></li></ul></div>
+        <div class="col-6 col-lg-2"><div class="footer-title">Flow</div><ul class="footer-links"><li><a href="login.html">Login</a></li><li><a href="cuestionario.html">Questionnaire</a></li><li><a href="weight-loss-program.html">Program</a></li></ul></div>
+        <div class="col-lg-2"><div class="footer-title">Help</div><ul class="footer-links"><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>Ã‚Â© 2026 HEALTHBOOST. All rights reserved.</span><span>Clean wellness, connected habits.</span></div>
+    </div>
+  </footer>
+  <a href="#book-session" id="floatingBook"><i class="far fa-calendar-check"></i> Book Now</a>
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+

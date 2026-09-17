@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HEALTHBOOST questionnaire with weighted scores for nutrition, mental wellness and physical activity.">
-  <title>Questionnaire - HEALTHBOOST</title>
+  <meta name="description" content="HEALTHBOOST login for the questionnaire flow.">
+  <title>Login - HEALTHBOOST</title>
   <link rel="icon" href="assets/images/descarga.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -31,17 +31,22 @@
     </div>
   </nav>
 
-  <main id="quizApp" class="question-shell">
-    <div class="quiz-wrap">
-      <div class="quiz-progress">
-        <div class="quiz-topline"><span id="quizStep">Question 1 of 8</span><span>Personalized scoring</span></div>
-        <div class="progress-track"><div id="quizProgressFill" class="progress-fill" style="--progress:0%"></div></div>
+  <main class="login-wrap">
+    <section class="login-card">
+      <div class="card-kicker">Welcome back</div>
+      <h1 class="section-title" style="font-size:42px">Login to continue</h1>
+      <p class="card-text">Use a simulated login to continue into the HEALTHBOOST questionnaire. Your session is stored locally in this browser.</p>
+      <form id="loginForm" novalidate>
+        <div class="mb-3"><label class="form-label" for="loginEmail">Email</label><input class="form-control-hb" id="loginEmail" type="email" autocomplete="email" required></div>
+        <div class="mb-3"><label class="form-label" for="loginPassword">Password</label><input class="form-control-hb" id="loginPassword" type="password" autocomplete="current-password" required></div>
+        <p id="loginError" class="form-error"></p>
+        <button class="btn-main w-100" type="submit"><i class="fas fa-arrow-right"></i> Log in</button>
+      </form>
+      <div class="text-center mt-4">
+        <a href="cuestionario.html" class="card-text">Continue to questionnaire without changing your account</a>
       </div>
-      <section id="questionCard" class="question-card"></section>
-      <section id="quizResult" class="result-card"></section>
-    </div>
+    </section>
   </main>
-
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
