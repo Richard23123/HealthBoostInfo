@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete vegan nutrition program: plant‑based meal plans, expert guidance on essential nutrients (B12, iron, omega‑3), and sustainable health.">
+  <title>Questionnarie — HealthBoost</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/images/nutrition-plan.png">
+  <!-- Bootstrap 5 -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS -->
+<link href="assets/css/aos.css" rel="stylesheet">
+
+<!-- Swiper -->
+<link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthBoost — Perfil y recomendaciones</title>
+<style>
+:root{
+  --bg:#f9fbf9; --navy:#1a202c; --navy2:#2d3748;
+  --yellow:#f6ad55; --yellow2:#ecc94b;
+  --gray:#4a5568; --gray2:#718096;
+  --border:#e2e8f0; --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+body{
+  background-image:url("assets/img/sundown.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:var(--navy);
+  min-height:100vh;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:rgba(255, 11, 239, 0);
+  z-index:-1;
+}
+
+
+/* ===== Header ===== */
+header{max-width:760px;margin:0 auto;padding:24px 24px 12px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-box{width:38px;height:38px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-box span{color:#fff;font-weight:700;font-size:16px}
+.logo-box::after{content:'';position:absolute;top:-4px;right:-4px;width:10px;height:10px;background:var(--yellow);border-radius:50%}
+.logo-name{font-size:14px;font-weight:600;letter-spacing:3px;color:var(--navy)}
+.step-label{font-size:13px;color:var(--gray);font-weight:500}
+
+/* ===== Banner perfil guardado ===== */
+.saved-banner{max-width:760px;margin:14px auto 0;padding:0 24px;display:none}
+.saved-banner .inner{background:#fff;border:1px solid var(--border);border-left:4px solid var(--yellow);border-radius:12px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--gray)}
+.saved-banner .btn{padding:8px 16px;font-size:13px}
+
+/* ===== Progreso ===== */
+.progress-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.progress-track{height:6px;background:var(--border);border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:var(--navy);border-radius:99px;transition:width .4s ease;width:0}
+.dots{display:flex;gap:6px;margin-top:10px}
+.dots i{flex:1;height:4px;border-radius:99px;background:var(--border);transition:background .3s}
+.dots i.done{background:var(--yellow)}
+.dots i.now{background:var(--navy)}
+
+/* ===== Pregunta ===== */
+main{max-width:760px;margin:0 auto;padding:32px 24px 64px}
+.q-card{animation:slideIn .35s ease}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+.q-category{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:99px;padding:6px 14px;font-size:13px;color:var(--gray);margin-bottom:20px}
+.q-text{font-size:26px;font-weight:600;line-height:1.3;margin-bottom:6px}
+.q-help{font-size:15px;color:var(--gray2);margin-bottom:24px}
+
+/* Opciones */
+.options{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--border);border-radius:14px;padding:16px 18px;font-size:16px;font-weight:500;color:var(--navy);cursor:pointer;transition:all .18s;text-align:left;width:100%}
+.opt:hover{border-color:var(--yellow);background:#fffaf0}
+.opt.selected{border-color:var(--navy);background:var(--navy);color:#fff}
+.opt .check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;position:relative;transition:border-color .18s}
+.opt.selected .check{border-color:var(--yellow)}
+.opt.selected .check::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--yellow)}
+
+/* Inputs */
+.input,.textarea{width:100%;border:2px solid var(--border);border-radius:14px;padding:16px 18px;font-size:16px;background:#fff;color:var(--navy);outline:none;transition:border-color .18s}
+.input:focus,.textarea:focus{border-color:var(--yellow)}
+.textarea{min-height:120px;resize:vertical}
+
+/* Escala */
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.scale .opt{justify-content:center;aspect-ratio:1;font-size:22px;font-weight:700;padding:0}
+
+/* Navegación */
+.nav{display:flex;justify-content:space-between;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:12px;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn-back{background:transparent;color:var(--gray)}
+.btn-back:hover:not:disabled{color:var(--navy)}
+.btn-next{background:var(--navy);color:#fff}
+.btn-next:hover:not:disabled{background:var(--navy2)}
+.btn-finish{background:var(--yellow);color:var(--navy)}
+.btn-finish:hover:not:disabled{background:var(--yellow2)}
+.error{color:#e53e3e;font-size:14px;margin-top:16px;display:none}
+
+/* ===== Resultado ===== */
+.result-hero{background:var(--navy);color:#fff;padding:56px 24px;text-align:center}
+.result-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:99px;padding:6px 16px;font-size:13px;margin-bottom:18px}
+.result-hero .badge b{color:var(--yellow)}
+.result-hero h1{font-size:30px;font-weight:600;max-width:640px;margin:0 auto 12px;line-height:1.3}
+.result-hero p{color:rgba(255,255,255,.7);font-size:16px}
+.result-body{max-width:760px;margin:-28px auto 0;padding:0 24px 64px}
+.tier-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 8px 24px rgba(26,32,44,.08);margin-bottom:24px}
+.tier-name{font-size:24px;font-weight:700;padding:6px 16px;border-radius:10px;display:inline-block}
+.tier-price{color:var(--gray);margin-left:10px;font-size:15px}
+.btn-plan{background:var(--navy);color:#fff;text-decoration:none}
+.btn-plan:hover{background:var(--navy2)}
+.plan-section{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:18px}
+.plan-section h3{font-size:18px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.plan-section ul{list-style:none}
+.plan-section li{padding:8px 0 8px 26px;position:relative;color:var(--gray);font-size:15px;line-height:1.5}
+.plan-section li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+
+/* Ficha de usuario (base de datos) */
+.ficha-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ficha-item{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.ficha-item .k{display:block;font-size:12px;color:var(--gray2);margin-bottom:4px}
+.ficha-item .v{font-size:15px;font-weight:600;color:var(--navy);word-break:break-word}
+.note{font-size:12px;color:var(--gray2);margin-top:14px}
+.result-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+@media(max-width:600px){
+  .q-text{font-size:22px}
+  .tier-card{flex-direction:column;text-align:center}
+  .ficha-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<!-- ========== PRELOADER (same) ========== -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="leaf-anim">
+      <img src="assets/images/HEALTHBOOST logo.jpg" alt="Animación" width="60" height="60">
+        <path d="M30 8C30 8 10 18 10 35C10 45.5 19 52 30 52C41 52 50 45.5 50 35C50 18 30 8 30 8Z" fill="#4CAF50" opacity="0.9"/>
+        <path d="M30 8C30 8 18 26 22 42" stroke="#81C784" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="52" x2="30" y2="58" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="30" y1="56" x2="24" y2="60" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+        <line x1="30" y1="56" x2="36" y2="60" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p>HealthBoost</p>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Health<span>Boost</span></a>
+      <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <div class="hamburger-icon p-2">
+          <span></span><span></span><span></span>
+        </div>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="weight-loss-program.html">NUTRITION</a></li>
+          <li class="nav-item"><a class="nav-link" href="vegan-nutrition.html">MENTAL WELLNESS</a></li>
+          <li class="nav-item"><a class="nav-link" href="detox-program.html">PHYSICAL ACTIVITY</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="saved-banner" id="savedBanner">
+  <div class="inner">
+    <span>👋 Ya tienes un perfil guardado en este dispositivo.</span>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-next" onclick="viewSaved()">Ver mi perfil</button>
+      <button class="btn btn-outline" onclick="startFresh()">Empezar de nuevo</button>
+    </div>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<main id="app"></main>
+
+<script>
+/* ============================================================
+   PREGUNTAS — edita este array para modificar el cuestionario.
+   Cada pregunta alimenta un campo de la ficha del usuario (label).
+   cat: objetivos | nutricion | actividad | estilo_vida | salud
+   type: single (una opción) | multi (varias) | number | text | scale
+============================================================ */
+const QUESTIONS = [
+  { label:"objetivo",            cat:"objetivos",    text:"¿Cuál es tu objetivo principal?", help:"Elige el que más te resuene ahora mismo", type:"single",
+    options:["Bajar de peso","Ganar masa muscular","Mantenerme saludable","Mejorar mi energía diaria","Controlar una condición de salud"] },
+  { label:"peso_kg",             cat:"objetivos",   text:"¿Cuánto pesas actualmente?", help:"En kilogramos", type:"number" },
+  { label:"altura_cm",           cat:"objetivos",   text:"¿Cuál es tu altura?", help:"En centímetros", type:"number" },
+  { label:"dieta",               cat:"nutricion",   text:"¿Qué tipo de dieta prefieres?", type:"single",
+    options:["Omnívora (como de todo)","Vegetariana","Vegana","Sin gluten","Baja en carbohidratos","No tengo preferencia"] },
+  { label:"alergias",            cat:"nutricion",   text:"¿Tienes alguna alergia o intolerancia alimentaria?", help:"Separa varias con comas. Si no, escribe \"Ninguna\"", type:"text" },
+  { label:"comidas_por_dia",     cat:"nutricion",   text:"¿Cuántas comidas haces al día?", type:"single",
+    options:["1-2 comidas","3 comidas","4-5 comidas","Más de 5"] },
+  { label:"nivel_actividad",     cat:"actividad",   text:"¿Cuál es tu nivel actual de actividad física?", type:"single",
+    options:["Sedentario (casi nada)","Ligero (1-2 veces/semana)","Moderado (3-4 veces/semana)","Activo (5+ veces/semana)"] },
+  { label:"actividades_favoritas",cat:"actividad",   text:"¿Qué tipos de actividad disfrutas?", help:"Puedes elegir varias", type:"multi",
+    options:["Gimnasio / pesas","Cardio (correr, bici)","Yoga / pilates","Deportes de equipo","Natación","Caminar / senderismo","Baile"] },
+  { label:"horas_sueno",         cat:"estilo_vida",  text:"¿Cuántas horas duermes en promedio?", help:"Por noche", type:"number" },
+  { label:"nivel_estres",        cat:"estilo_vida",  text:"¿Cómo calificarías tu nivel de estrés?", help:"1 = muy bajo, 5 = muy alto", type:"scale" },
+  { label:"condicion_medica",    cat:"salud",        text:"¿Tienes alguna condición médica que debamos considerar?", help:"Ej: diabetes, hipertensión, tiroides. Si no, escribe \"Ninguna\"", type:"text" },
+  { label:"medicamentos",        cat:"salud",        text:"¿Tomas algún medicamento o suplemento regularmente?", help:"Si no, escribe \"Ninguno\"", type:"text" }
+];
+
+const CAT_LABEL = { objetivos:"Objetivos", nutricion:"Nutrición", actividad:"Actividad", estilo_vida:"Estilo de vida", salud:"Salud" };
+const TIERS = { Starter:{color:"#68d391",price:"$14.99"}, Premium:{color:"#f6ad55",price:"$24.99"}, Elite:{color:"#1a202c",price:"$39.99"} };
+const DB_KEYS = { profile:"hb_profile", answers:"hb_answers" };
+
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(undefined);
+
+const app = document.getElementById("app");
+const progressFill = document.getElementById("progressFill");
+const stepLabel = document.getElementById("stepLabel");
+const dots = document.getElementById("dots");
+
+/* ===== Base de datos local del usuario ===== */
+function dbSave(profile){
+  try{
+    localStorage.setItem(DB_KEYS.profile, JSON.stringify(profile));
+    localStorage.setItem(DB_KEYS.answers, JSON.stringify(answers));
+  }catch(e){}
+}
+function dbGetProfile(){ try{ return JSON.parse(localStorage.getItem(DB_KEYS.profile)); }catch(e){ return null; } }
+function dbGetAnswers(){ try{ const a = JSON.parse(localStorage.getItem(DB_KEYS.answers)); return Array.isArray(a) ? a : null; }catch(e){ return null; } }
+
+/* Construye la ficha estructurada del usuario */
+function buildProfile(){
+  const byLabel = {};
+  QUESTIONS.forEach((q,i) => byLabel[q.label] = answers[i] ?? null);
+
+  const w = parseFloat(byLabel.peso_kg), h = parseFloat(byLabel.altura_cm);
+  const bmi = (w && h) ? +(w / Math.pow(h/100, 2)).toFixed(1) : null;
+  const bmiCat = bmi === null ? null :
+    bmi < 18.5 ? "bajo peso" : bmi < 25 ? "peso saludable" : bmi < 30 ? "sobrepeso" : "obesidad";
+
+  const cond = (byLabel.condicion_medica || "").toLowerCase();
+  const hasCondition = cond && !cond.includes("ningun");
+
+  let tier = "Starter";
+  if(hasCondition || byLabel.nivel_estres >= 4) tier = "Elite";
+  else if(["Bajar de peso","Ganar masa muscular","Controlar una condición de salud"].includes(byLabel.objetivo)) tier = "Premium";
+
+  return {
+    fecha_actualizacion: new Date().toISOString(),
+    ...byLabel,
+    imc: bmi,
+    categoria_imc: bmiCat,
+    plan_recomendado: tier
+  };
+}
+
+/* ===== Render del cuestionario ===== */
+function renderDots(){
+  dots.innerHTML = QUESTIONS.map((q,i) =>
+    `<i class="${i < current ? "done" : i === current ? "now" : ""}"></i>`).join("");
+}
+
+function isAnswered(){
+  const a = answers[current];
+  if(a === undefined || a === null) return false;
+  if(Array.isArray(a)) return a.length > 0;
+  if(typeof a === "string") return a.trim() !== "";
+  return true;
+}
+
+function render(){
+  const q = QUESTIONS[current];
+  stepLabel.textContent = `Pregunta ${current + 1} de ${QUESTIONS.length}`;
+  progressFill.style.width = (current / QUESTIONS.length * 100) + "%";
+  renderDots();
+
+  let body = "";
+  if(q.type === "single" || q.type === "multi"){
+    body = `<div class="options">` + q.options.map(opt => {
+      const sel = q.type === "single" ? answers[current] === opt : (answers[current] || []).includes(opt);
+      return `<button class="opt ${sel ? "selected" : ""}" data-val="${opt}">
+        <span class="check"></span>${opt}</button>`;
+    }).join("") + `</div>`;
+  } else if(q.type === "number"){
+    body = `<input class="input" id="qInput" type="number" inputmode="decimal" placeholder="Escribe un número" value="${answers[current] ?? ""}">`;
+  } else if(q.type === "text"){
+    body = `<textarea class="textarea" id="qInput" placeholder="Escribe tu respuesta...">${answers[current] ?? ""}</textarea>`;
+  } else if(q.type === "scale"){
+    body = `<div class="scale">` + [1,2,3,4,5].map(n =>
+      `<button class="opt ${answers[current] === n ? "selected" : ""}" data-val="${n}">${n}</button>`).join("") + `</div>`;
+  }
+
+  const last = current === QUESTIONS.length - 1;
+  app.innerHTML = `
+    <div class="q-card">
+      <div class="q-category">${q.icon} ${CAT_LABEL[q.cat]}</div>
+      <h2 class="q-text">${q.text}</h2>
+      ${q.help ? `<p class="q-help">${q.help}</p>` : ""}
+      ${body}
+      <p class="error" id="err">Por favor responde para continuar.</p>
+      <div class="nav">
+        <button class="btn btn-back" id="backBtn" ${current === 0 ? "disabled" : ""}>← Atrás</button>
+        ${last
+          ? `<button class="btn btn-finish" id="nextBtn">💾 Guardar mi perfil</button>`
+          : `<button class="btn btn-next" id="nextBtn">Continuar →</button>`}
+      </div>
+    </div>`;
+
+  if(q.type === "single"){
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => { answers[current] = b.dataset.val; render(); });
+  } else if(q.type === "multi"){
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+      const arr = answers[current] || [];
+      answers[current] = arr.includes(b.dataset.val) ? arr.filter(x => x !== b.dataset.val) : [...arr, b.dataset.val];
+      render();
+    });
+  } else if(q.type === "scale"){
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => { answers[current] = Number(b.dataset.val); render(); });
+  } else {
+    const input = document.getElementById("qInput");
+    input.oninput = () => { answers[current] = input.value; };
+    input.onkeydown = e => { if(e.key === "Enter" && q.type === "number") next(); };
+  }
+  document.getElementById("backBtn").onclick = () => { if(current > 0){ current--; render(); } };
+  document.getElementById("nextBtn").onclick = () => { last ? finish() : next(); };
+}
+
+function next(){
+  if(!isAnswered()){ document.getElementById("err").style.display = "block"; return; }
+  current++;
+  render();
+}
+
+/* ===== Recomendaciones según la ficha ===== */
+function buildRecommendations(p){
+  const nut = [], act = [], life = [];
+
+  if(p.objetivo === "Bajar de peso") nut.push("Te recomendamos un déficit calórico moderado de 300-500 kcal: sostenible y sin efecto rebote.");
+  if(p.objetivo === "Ganar masa muscular") nut.push("Te recomendamos un superávit controlado con 1.6-2 g de proteína por kg de peso para ganar músculo limpio.");
+  if(!nut.length) nut.push("Te recomendamos mantener tus calorías cerca de tu gasto diario, priorizando alimentos integrales.");
+  if(p.dieta === "Vegana" || p.dieta === "Vegetariana") nut.push("Por tu dieta, supervisa B12, hierro y omega-3 con fuentes vegetales o suplementación.");
+  if(p.dieta === "Sin gluten") nut.push("Elimina el gluten por completo: arroz, quinoa y avena certificada serán tus aliados.");
+  if(p.dieta === "Baja en carbohidratos") nut.push("Concentra los carbohidratos cerca de tu actividad física para mantener energía estable.");
+  if(p.comidas_por_dia === "1-2 comidas") nut.push("Distribuye tu ingesta en al menos 3 comidas para estabilizar energía y azúcar en sangre.");
+  if(p.alergias && !String(p.alergias).toLowerCase().includes("ningun")) nut.push(`Recordatorio clave: evitar siempre ${p.alergias}.`);
+
+  if(p.nivel_actividad === "Sedentario (casi nada)") act.push("Empieza suave: 20-30 min de caminata diaria y 2 sesiones ligeras por semana.");
+  if(p.nivel_actividad === "Ligero (1-2 veces/semana)") act.push("Pasa a 3 sesiones semanales mezclando fuerza y cardio ligero.");
+  if(p.nivel_actividad === "Moderado (3-4 veces/semana)") act.push("Estructura 4 sesiones con periodización: fuerza, cardio y recuperación activa.");
+  if(p.nivel_actividad === "Activo (5+ veces/semana)") act.push("Optimiza tus sesiones con progresión de carga y días de descarga programados.");
+  if(p.actividades_favoritas && p.actividades_favoritas.length) act.push(`Apóyate en lo que disfrutas: ${p.actividades_favoritas.join(", ")}.`);
+  else act.push("Prueba distintos tipos de movimiento esta semana para descubrir tu favorito.");
+
+  if(parseFloat(p.horas_sueno) < 7) life.push(`Duermes ${p.horas_sueno} horas: prioriza una rutina de sueño para llegar a 7-8 horas.`);
+  else life.push("Tu sueño es un punto fuerte: protégelo como pilar de recuperación.");
+  if(p.nivel_estres >= 4) life.push("Incorpora 10 minutos diarios de respiración o mindfulness para bajar tu estrés.");
+  else if(p.nivel_estres <= 2) life.push("Tu estrés está bajo: conserva espacios de desconexión y hobbies.");
+
+  return { nut, act, life };
+}
+
+/* ===== Pantalla de resultado: ficha + recomendaciones ===== */
+function renderResult(p){
+  progressFill.style.width = "100%";
+  progressFill.style.background = "#f6ad55";
+  stepLabel.textContent = "Perfil guardado";
+  dots.innerHTML = QUESTIONS.map(() => `<i class="done"></i>`).join("");
+  document.getElementById("savedBanner").style.display = "none";
+
+  const t = TIERS[p.plan_recomendado];
+  const r = buildRecommendations(p);
+
+  const ficha = QUESTIONS.map((q,i) => {
+    const a = answers[i];
+    const v = Array.isArray(a) ? a.join(", ") : (a ?? "—");
+    return `<div class="ficha-item"><span class="k">${q.icon} ${CAT_LABEL[q.cat]}</span><span class="v">${v}</span></div>`;
+  }).join("") +
+  `<div class="ficha-item"><span class="k">🧮 IMC calculado</span><span class="v">${p.imc ?? "—"} ${p.categoria_imc ? "· " + p.categoria_imc : ""}</span></div>`;
+
+  app.innerHTML = `
+    <div class="result-hero">
+      <div class="badge">💾 <b>Perfil guardado</b></div>
+      <h1>Tu perfil de bienestar quedó registrado</h1>
+      <p>Estos datos alimentan tu historial en HealthBoost y personalizan cada recomendación.</p>
+    </div>
+    <div class="result-body">
+      <div class="tier-card">
+        <div>
+          <p style="font-size:13px;color:var(--gray2);margin-bottom:6px">Plan recomendado para ti</p>
+          <span class="tier-name" style="background:${t.color}22;color:${t.color}">${p.plan_recomendado}</span>
+          <span class="tier-price">${t.price} / mes</span>
+        </div>
+        <a class="btn btn-plan" href__="#pricing">Elegir este plan →</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>📋 Tu ficha de usuario</h3>
+        <div class="ficha-grid">${ficha}</div>
+        <p class="note">💾 Guardado en la base de datos local de este navegador. Descárgalo o edítalo cuando quieras.</p>
+      </div>
+
+      <div class="plan-section"><h3>🥗 Recomendaciones de nutrición</h3><ul>${r.nut.map(x => `<li>${x}</li>`).join("")}</ul></div>
+      <div class="plan-section"><h3>💪 Recomendaciones de actividad</h3><ul>${r.act.map(x => `<li>${x}</li>`).join("")}</ul></div>
+      <div class="plan-section"><h3>🌙 Recomendaciones de bienestar</h3><ul>${r.life.map(x => `<li>${x}</li>`).join("")}</ul></div>
+
+      <div class="result-actions">
+        <button class="btn btn-outline" onclick="editAnswers()">✏️ Actualizar mis respuestas</button>
+        <button class="btn btn-next" onclick="exportJSON()">⬇️ Descargar mis datos (JSON)</button>
+      </div>
+    </div>`;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function finish(){
+  if(!isAnswered()){ document.getElementById("err").style.display = "block"; return; }
+  const profile = buildProfile();
+  dbSave(profile);
+  renderResult(profile);
+}
+
+/* ===== Acciones del resultado ===== */
+function editAnswers(){
+  current = 0;
+  progressFill.style.background = "";
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+function viewSaved(){
+  const saved = dbGetAnswers();
+  if(saved) answers = saved;
+  renderResult(buildProfile());
+}
+function startFresh(){
+  try{ localStorage.removeItem(DB_KEYS.profile); localStorage.removeItem(DB_KEYS.answers); }catch(e){}
+  answers = new Array(QUESTIONS.length).fill(undefined);
+  current = 0;
+  document.getElementById("savedBanner").style.display = "none";
+  progressFill.style.background = "";
+  render();
+}
+function exportJSON(){
+  const data = dbGetProfile() || buildProfile();
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "perfil-healthboost.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ===== Inicio ===== */
+(function init(){
+  const savedProfile = dbGetProfile();
+  if(savedProfile){
+    document.getElementById("savedBanner").style.display = "block";
+    const savedAnswers = dbGetAnswers();
+    if(savedAnswers) answers = savedAnswers;
+  }
+  render();
+})();
+  // ---- PRELOADER ----
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('fade-out');
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => { document.body.style.opacity = '1'; }, 100);
+    }, 1800);
+  });
+
+  // ---- AOS INIT ----
+  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  // ---- NAVBAR SCROLL ----
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+
+  // ---- ACTIVE NAV LINK ----
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // ---- SMOOTH SCROLL ----
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 70;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        const collapse = document.getElementById('navMenu');
+        if (collapse.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(collapse).hide();
+        }
+      }
+    });
+  });
+
+  // ---- COUNTERS ----
+  function animateCount(el) {
+    const target = +el.getAttribute('data-count');
+    let count = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = Math.floor(count) + (el.closest('#stats') ? '' : '+');
+      if (count >= target) clearInterval(timer);
+    }, 25);
+  }
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        animateCount(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ---- SWIPER ----
+  new Swiper('.swiper-testimonials', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: { 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 2 } }
+  });
+
+  // ---- FORM ----
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fields = this.querySelectorAll('input[required], textarea[required]');
+    let valid = true;
+    fields.forEach(f => {
+      if (!f.value.trim()) {
+        valid = false;
+        f.style.borderColor = '#e74c3c';
+        setTimeout(() => { f.style.borderColor = ''; }, 2000);
+      }
+    });
+    if (valid) {
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  });
+
+  // ---- PARALLAX HERO ----
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.program-hero');
+    if (hero) hero.style.backgroundPositionY = (window.scrollY * 0.4) + 'px';
+  });
+</script>
+</body>
+
+</html>
