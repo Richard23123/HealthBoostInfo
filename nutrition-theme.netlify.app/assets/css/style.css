@@ -567,8 +567,41 @@ img { max-width: 100%; }
   letter-spacing: 1px; text-transform: uppercase;
   padding: 4px 12px; border-radius: 50px;
 }
-.swiper-pagination-bullet-active { background: var(--green) !important; }
-.swiper-button-next, .swiper-button-prev { color: var(--green) !important; }
+/* ========== TESTIMONIALS & SWIPER PAGINATION ========== */
+#testimonials { background: var(--cream); }
+.swiper-testimonials { padding-bottom: 50px !important; }
+.testimonial-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  margin: 10px;
+}
+.stars { color: var(--yellow); font-size: 14px; margin-bottom: 16px; }
+.testimonial-text { font-size: 15px; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 24px; }
+.testimonial-author { display: flex; align-items: center; gap: 14px; }
+.t-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green-pale); }
+.t-name { font-weight: 700; font-size: 15px; color: var(--text-dark); }
+.t-role { font-size: 12px; color: var(--text-light); }
+
+/* --- ESTILOS DE PAGINACIÓN SWIPER --- */
+.swiper-pagination {
+  position: relative;
+  margin-top: 40px !important;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--blue-dark);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: var(--yellow) !important;
+  opacity: 1;
+  width: 32px;
+  border-radius: 6px;
+}
 
 /* ========== STATS ========== */
 #stats {
@@ -1512,32 +1545,45 @@ footer::before {
       transform: translateY(-2px);
     }
 
-    /* ========== PAGINATION ========== */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 50px;
-    }
-    .page-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: white;
-      border-radius: 50%;
-      color: var(--text-mid);
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .page-link:hover, .page-link.active {
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white;
-      box-shadow: 0 8px 20px rgba(58,140,63,0.3);
-      transform: translateY(-2px);
-    }
-  .footer-bottom a{color:rgba(255,255,255,0.5); text-decoration:none; font-size:13px;}
-
+    /* ========== PAGINATION (Blog / Páginas) ========== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+.page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 50%;
+  color: var(--text-mid);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.page-link:hover {
+  background: var(--yellow);
+  color: white;
+  box-shadow: 0 8px 20px rgba(212, 157, 15, 0.3);
+  transform: translateY(-2px);
+  border-color: var(--yellow);
+}
+.page-link.active {
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
+  color: white;
+  box-shadow: 0 8px 20px rgba(212, 157, 15, 0.4);
+  transform: translateY(-2px);
+  border-color: var(--yellow);
+}
+.page-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
