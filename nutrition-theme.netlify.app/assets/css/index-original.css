@@ -1,3 +1,5 @@
+@import url("icons.css");
+
 /* ========== CSS VARIABLES ========== */
 :root {
   --blue-light: #38547d;
@@ -35,6 +37,14 @@ body {
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .section-pad { padding: 100px 0; }
 img { max-width: 100%; }
+.editable-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* ========== PRELOADER ========== */
 #preloader {
@@ -359,7 +369,7 @@ img { max-width: 100%; }
 }
 .about-img {
   border-radius: var(--radius-lg);
-  width: 140%;
+  width: 100%;
   box-shadow: var(--shadow-lg);
   object-fit: cover;
  
@@ -584,15 +594,16 @@ img { max-width: 100%; }
 .collaborator-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:24px; }
 .collaborator-card { background:#fff; border:1px solid rgba(24,35,51,.1); display:grid; grid-template-columns:1fr 1fr; align-items:center; overflow:hidden; }
 .collaborator-featured { grid-row:span 2; grid-template-columns:1fr; }
-.team-photo { min-height:250px; background:linear-gradient(135deg,#e8edf2,#fff); display:grid; place-items:center; color:#718096; font-size:13px; font-weight:700; }
-.collaborator-featured .team-photo { min-height:390px; }
+.team-photo { height:250px; background:linear-gradient(135deg,#e8edf2,#fff); display:grid; place-items:center; color:#718096; font-size:13px; font-weight:700; overflow:hidden; }
+.team-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.collaborator-featured .team-photo { height:390px; }
 .collaborator-card>div:last-child { padding:28px; }
 .team-role { color:#d49d0f; text-transform:uppercase; font-size:12px; font-weight:800; letter-spacing:1px; }
 .collaborator-card h3 { color:#182333; margin:8px 0 10px; }
 .collaborator-card p { color:#4a5568; line-height:1.7; }
 .team-link { display:inline-block; width:auto; padding:14px 28px; }
 @media(max-width:991px){.collaborator-grid{grid-template-columns:1fr}.collaborator-featured{grid-row:auto}.collaborator-card{grid-template-columns:1fr 1fr}}
-@media(max-width:575px){.collaborator-card{grid-template-columns:1fr}.collaborator-featured .team-photo,.team-photo{min-height:260px}}
+@media(max-width:575px){.collaborator-card{grid-template-columns:1fr}.collaborator-featured .team-photo,.team-photo{height:260px}}
 #stats::before {
   content: '';
   position: absolute; inset: 0;
