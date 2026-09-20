@@ -714,3 +714,123 @@ footer {
     object-fit: cover;
   }
 }
+
+/* =========================================
+   MENTAL WELLNESS - TEXTO SOBRE LA FOTO
+   ========================================= */
+
+.mental-hero {
+  position: relative !important;
+  min-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* FOTO: ocupa TODO el hero */
+.mental-hero .image-slot {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  z-index: 1 !important;
+}
+
+.mental-hero .image-slot img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  border-radius: 0 !important;
+
+  z-index: 1 !important;
+}
+
+
+/* DEGRADADO OSCURO SOBRE LA FOTO */
+.mental-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 64, 0.98) 0%,
+    rgba(6, 6, 64, 0.92) 20%,
+    rgba(6, 6, 64, 0.70) 38%,
+    rgba(6, 6, 64, 0.35) 55%,
+    rgba(6, 6, 64, 0.08) 75%,
+    transparent 100%
+  );
+
+  z-index: 2 !important;
+  pointer-events: none;
+}
+
+
+/* QUITAMOS LOS PUNTITOS DEL HERO ANTERIOR */
+.mental-hero::after {
+  display: none !important;
+}
+
+
+/* CONTENIDO ENCIMA DE FOTO + DEGRADADO */
+.mental-hero .hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+
+  width: 100% !important;
+  max-width: 1320px !important;
+
+  min-height: 100vh !important;
+
+  margin: 0 auto !important;
+  padding-top: 120px !important;
+  padding-bottom: 70px !important;
+
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+/* TEXTO */
+.mental-hero .hero-content > .row {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.mental-hero .hero-content > .row > div:first-child {
+  position: relative !important;
+  z-index: 20 !important;
+
+  width: 52% !important;
+  max-width: 650px !important;
+  flex: 0 0 52% !important;
+}
+
+
+/* LA COLUMNA DE LA FOTO YA NO OCUPA ESPACIO */
+.mental-hero .hero-content > .row > div:last-child {
+  position: static !important;
+}
+
+
+/* TEXTO SIEMPRE ARRIBA */
+.mental-hero .hero-badge,
+.mental-hero .hero-title,
+.mental-hero .hero-sub,
+.mental-hero .hero-actions {
+  position: relative !important;
+  z-index: 30 !important;
+}
