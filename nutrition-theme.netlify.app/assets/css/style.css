@@ -957,3 +957,59 @@ footer {
 .mental-hero::after {
   display: none !important;
 }
+
+/* ===== POSICIÓN FINAL DEL TEXTO DEL HERO ===== */
+
+.mental-hero-content {
+  position: relative !important;
+  z-index: 20 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 120px 0 70px 6.5% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+
+
+/* Mantener el contenido solamente en el lado izquierdo */
+.mental-hero-content .hero-badge,
+.mental-hero-content .hero-title,
+.mental-hero-content .hero-sub,
+.mental-hero-content .hero-actions {
+  position: relative !important;
+  z-index: 30 !important;
+}
+
+
+/* TÍTULO */
+.mental-hero-content .hero-title {
+  width: 580px !important;
+  max-width: 42vw !important;
+
+  margin-top: 28px !important;
+  margin-bottom: 18px !important;
+
+  font-size: clamp(48px, 4.8vw, 74px) !important;
+  line-height: 1.02 !important;
+}
+
+
+/* DESCRIPCIÓN */
+.mental-hero-content .hero-sub {
+  width: 560px !important;
+  max-width: 40vw !important;
+}
+
+
+/* BOTONES */
+.mental-hero-content .hero-actions {
+  width: auto !important;
+  max-width: none !important;
+}
