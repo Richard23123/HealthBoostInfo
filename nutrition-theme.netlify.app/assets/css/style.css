@@ -834,3 +834,101 @@ footer {
   position: relative !important;
   z-index: 30 !important;
 }
+
+/* ==================================================
+   MENTAL WELLNESS HERO
+   ================================================== */
+
+.mental-hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  overflow: hidden !important;
+  background: #060640 !important;
+}
+
+
+/* FOTO A PANTALLA COMPLETA */
+
+.mental-hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  z-index: 1 !important;
+}
+
+
+/* DEGRADADO */
+
+.mental-hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 2 !important;
+
+  background: linear-gradient(
+    90deg,
+    #060640 0%,
+    rgba(6, 6, 64, 0.96) 18%,
+    rgba(6, 6, 64, 0.82) 32%,
+    rgba(6, 6, 64, 0.55) 45%,
+    rgba(6, 6, 64, 0.20) 60%,
+    rgba(6, 6, 64, 0) 78%
+  ) !important;
+
+  pointer-events: none;
+}
+
+
+/* TEXTO ENCIMA DE TODO */
+
+.mental-hero-content {
+  position: relative !important;
+
+  z-index: 10 !important;
+
+  min-height: 100vh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  padding-top: 120px !important;
+  padding-bottom: 70px !important;
+}
+
+
+/* ANCHO DEL TEXTO */
+
+.mental-hero-content .hero-title {
+  max-width: 650px !important;
+}
+
+.mental-hero-content .hero-sub {
+  max-width: 570px !important;
+}
+
+
+/* TODO EL TEXTO ARRIBA */
+
+.mental-hero-content .hero-badge,
+.mental-hero-content .hero-title,
+.mental-hero-content .hero-sub,
+.mental-hero-content .hero-actions {
+  position: relative !important;
+  z-index: 11 !important;
+}
+
+
+/* QUITAR PATRÓN VIEJO */
+
+.mental-hero::after {
+  display: none !important;
+}
