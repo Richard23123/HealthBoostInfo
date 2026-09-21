@@ -189,6 +189,7 @@ body.nav-solid #mainNav .hamburger-icon span { background: var(--white); }
   background-size: 44px 44px;
   opacity: 0.35;
 }
+
 .hero-content { position: relative; z-index: 2; padding-top: 92px; padding-bottom: 70px; }
 .hero-badge {
   display: inline-flex;
