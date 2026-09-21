@@ -1013,3 +1013,56 @@ footer {
   width: auto !important;
   max-width: none !important;
 }
+
+/* ===== RESTAURAR NAVBAR SOBRE MENTAL WELLNESS ===== */
+
+#mainNav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  z-index: 9999 !important;
+}
+
+#mainNav .container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* LOGO NORMAL */
+#mainNav .navbar-brand {
+  width: auto !important;
+  max-width: none !important;
+
+  display: inline-block !important;
+
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+
+  flex: 0 0 auto !important;
+}
+
+/* MENÚ A LA DERECHA */
+#mainNav .navbar-collapse {
+  flex-grow: 1 !important;
+}
+
+#mainNav .navbar-nav {
+  margin-left: auto !important;
+  width: auto !important;
+}
+
+/* Evitar que las letras se separen */
+#mainNav .navbar-brand,
+#mainNav .navbar-brand span {
+  white-space: nowrap !important;
+}
