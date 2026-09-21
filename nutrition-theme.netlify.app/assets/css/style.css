@@ -109,10 +109,11 @@ h1, h2, h3, .brand-font { font-family: "Playfair Display", serif; }
   padding: 12px 0;
 }
 .navbar-brand {
-  font-family: "Playfair Display", serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 26px;
   font-weight: 900;
-  letter-spacing: -0.5px;
+  letter-spacing: 109px;
+  line-height: 1.4;
   color: var(--white) !important;
 }
 #mainNav.scrolled .navbar-brand { color: var(--blue-dark) !important; }
